@@ -7,7 +7,31 @@
     <title>Intention Timer</title>
   </head>
   <body>
-
+    <header>Intention Timer</header>
+    <main>
+      <h1 class='activities'> New Activity</h1>
+      <section class='main-containter'>
+        <h3>Select a category:</h3>
+        <img class='study' src='./assets/study.svg' alt='study-icon'>
+        <img class='meditate' src='./assets/meditate.svg' alt='meditate-icon'>
+        <img class='exercise' src='./assets/exercise.svg' alt='exercise-icon'>
+      </section>
+      <section>
+        <form class='input-form'>
+          <label for='activity-description'>What would you like to accomplish during this time?</label>
+          <input type='text' id='activity-description' name='activity-description'> <br>
+          <label for='minutes'>Minutes</label>
+          <input type='text' id='minutes' name='minutes'>
+          <label for='seconds'>Seconds</label>
+          <input type='text' id='seconds' name='seconds'><br>
+          <input type='submit' id='submit' value='Start Activity'>
+        </form>
+      </section>
+    </main>
+    <aside>
+      <h1 class='activities'>Past Activities</h1>
+      <p>You haven't logged any activities yet. Complete the form to the left to get started!</p>
+    </aside>
   </body>
   <script src="src/Activity.js"></script>
   <script src="src/main.js"></script>
