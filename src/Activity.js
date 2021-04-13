@@ -1,11 +1,11 @@
 class Activity{
-  constructor(category, descrition, minutes, seconds, completed){
+  constructor(category, description, minutes, seconds){
     this.id = Date.now();
     this.category = category;
-    this.descrition = descrition;
+    this.description = description;
     this.minutes = minutes;
     this.seconds = seconds;
-    this.completed = completed;
+    this.completed = false;
   }
   startTimer(){
 
@@ -14,6 +14,6 @@ class Activity{
 
   }
   saveToStorage(){
-    
+
   }
 }
