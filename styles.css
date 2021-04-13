@@ -12,6 +12,9 @@ Error: #EFB7EC */
   border: 2px solid red;
   font-family: Montserrat;
 }
+.hidden {
+  display: none;
+}
 
 body{
   margin: 0;
@@ -40,6 +43,11 @@ div {
   height: 40rem;
   justify-content: space-evenly;
 }
+
+.image-section {
+  justify-content: space-between;
+}
+
 .left {
   width: 1100px;
 }
