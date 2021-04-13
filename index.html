@@ -8,30 +8,28 @@
   </head>
   <body>
     <header>INTENTION TIMER</header>
-    <main>
+    <main id='main'>
       <aside class='left'>
         <h1 class='activities'> New Activity</h1>
         <div>
-        <section class='main-containter'>
-          <h3>Select a category:</h3>
-          <img class='study' src='./assets/study.svg' alt='study-icon'>
-          <img class='meditate' src='./assets/meditate.svg' alt='meditate-icon'>
-          <img class='exercise' src='./assets/exercise.svg' alt='exercise-icon'>
-        </section>
-        <section>
-          <form class='input-form'>
+          <section id='imageSection'>
+            <h3>Select a category:</h3>
+            <img class='study' id='study' src='./assets/study.svg' alt='study-icon'>
+            <img class='meditate' id='meditate' src='./assets/meditate.svg' alt='meditate-icon'>
+            <img class='exercise' id='exercise' src='./assets/exercise.svg' alt='exercise-icon'>
+          </section>
+          <form class='input-form' id='form'>
             <label for='activity-description'>What would you like to accomplish during this time?</label>
-            <input type='text' class='activity-description' id='activity-description' name='activity-description'> <br>
+            <input type='text' class='activity-description' id='activityDescription' name='activity-description'> <br>
             <label for='minutes'>Minutes</label>
             <input type='text' id='minutes' name='minutes'>
             <label for='seconds'>Seconds</label>
             <input type='text' id='seconds' name='seconds'><br>
             <input type='submit' class='submit' id='submit' value='Start Activity'>
           </form>
-        </section>
         </div>
       </aside>
-      <aside class='right'>
+      <aside class='right' id='rightAside'>
         <h1 class='activities'>Past Activities</h1>
         <p>You haven't logged any activities yet. Complete the form to the left to get started!</p>
       </aside>
