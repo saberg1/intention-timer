@@ -15,7 +15,11 @@ var rightAside = document.querySelector('#rightAside');
 
 var studyDiv = document.querySelector('#studyDiv');
 var meditateDiv = document.querySelector('#meditateDiv');
-var exerciseDiv = document.querySelector('#exerciseDiv')
+var exerciseDiv = document.querySelector('#exerciseDiv');
+
+//Global Variables
+var currentActivity;
+var activities = [];
 
 //Event Listeners
 studyDiv.addEventListener('click', changeColor);
@@ -37,12 +41,9 @@ if (event.target.id === 'exercise'){
   exerciseDiv.innerHTML = `<img src="assets/exercise-active.svg">`
 }
 };
-
 function submitData(){
   event.preventDefault()
   if (activityInput.value || minutesInput.value || secondsInput.value){
-    var action = new Activity(category, activityInput.value, minutesInput.value, secondsInput.value)
-} else{
-  alert('Test')
+  currentActivity = new Activity('Yes', activityInput.value, minutesInput.value, secondsInput.value)
 }
 };
