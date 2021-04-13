@@ -9,10 +9,12 @@ var exerciseImg = document.querySelector('#exercise')
 
 var submitBtn = document.querySelector('#submit');
 
-var main = document.querySelector('#main');
+var imageSection = document.querySelector('#imageSection');
+var form = document.querySelector('#form');
+var rightAside = document.querySelector('#rightAside')
 
 //Event Listeners
-main.addEventListener('click', changeColor)
+
 
 //Event Handlers
 function changeColor(){
