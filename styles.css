@@ -10,11 +10,66 @@ Error: #EFB7EC */
 
 * {
   border: 2px solid red;
+  font-family: Montserrat;
 }
 
+body{
+  margin: 0;
+}
+
+main {
+  display: flex;
+  background-color: #2B2733;
+  color: #CBC9CF;
+  height: 100vh;
+  width: 100vw;
+}
+
+header {
+  width: 100vw;
+  position: fixed;
+  overflow: hidden;
+  background-color: #46424D;
+  color: #FFF;
+  text-align: center;
+
+}
+
+div {
+  background-color: #46424D;
+}
+.left {
+  width: 1100px;
+}
 
 img {
-  height: 150px;
-  width: 150px;
-  
+  height: 50px;
+  width: 120px;
+
+}
+input {
+  background: transparent;
+    border: none;
+    border-bottom: 1px solid #FFF;
+}
+
+.submit {
+  background-color: #FFF;
+  border: none;
+  color: #2B2733;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  text-transform: uppercase;
+}
+
+.activity-description{
+  background: transparent;
+    border: none;
+    border-bottom: 1px solid #FFF;
+    width: 400px;
 }
