@@ -27,7 +27,6 @@ main {
 
 header {
   width: 100vw;
-  height: 15vh;
   position: fixed;
   overflow: hidden;
   background-color: #46424D;
