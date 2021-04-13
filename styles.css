@@ -13,15 +13,26 @@ Error: #EFB7EC */
   font-family: Montserrat;
 }
 
+body{
+  margin: 0;
+}
+
 main {
   display: flex;
   background-color: #2B2733;
   color: #CBC9CF;
+  height: 100vh;
+  width: 100vw;
 }
 
 header {
+  width: 100vw;
+  height: 15vh;
+  position: fixed;
+  overflow: hidden;
   background-color: #46424D;
   color: #FFF;
+  text-align: center;
 
 }
 
@@ -33,8 +44,8 @@ div {
 }
 
 img {
-  height: 150px;
-  width: 150px;
+  height: 50px;
+  width: 120px;
 
 }
 input {
@@ -44,7 +55,7 @@ input {
 }
 
 .submit {
-  background-color: #ddd;
+  background-color: #FFF;
   border: none;
   color: #2B2733;
   padding: 10px 20px;
