@@ -21,6 +21,7 @@ var exerciseDiv = document.querySelector('#exerciseDiv')
 studyDiv.addEventListener('click', changeColor);
 meditateDiv.addEventListener('click', changeColor);
 exerciseDiv.addEventListener('click', changeColor);
+submitBtn.addEventListener('click', submitData)
 // meditateImg.addEventListener('click');
 // exerciseImg.addEventListener('click');
 
@@ -34,5 +35,14 @@ if (event.target.id === 'meditate'){
 }
 if (event.target.id === 'exercise'){
   exerciseDiv.innerHTML = `<img src="assets/exercise-active.svg">`
+}
+};
+
+function submitData(){
+  event.preventDefault()
+  if (activityInput.value || minutesInput.value || secondsInput.value){
+    var action = new Activity(category, activityInput.value, minutesInput.value, secondsInput.value)
+} else{
+  alert('Test')
 }
 };
