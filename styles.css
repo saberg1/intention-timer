@@ -37,6 +37,8 @@ header {
 
 div {
   background-color: #46424D;
+  height: 40rem;
+  justify-content: space-evenly;
 }
 .left {
   width: 1100px;
