@@ -38,11 +38,11 @@ header {
 
 }
 
-div {
+/* div {
   background-color: #46424D;
   height: 40rem;
   justify-content: space-evenly;
-}
+} */
 
 .image-section {
   justify-content: space-between;

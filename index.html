@@ -11,12 +11,12 @@
     <main id='main'>
       <aside class='left'>
         <h1 class='activities'> New Activity</h1>
-        <div>
+        <section>
           <h3>Select a category:</h3>
           <section id='imageSection' class="image-section">
-            <img class='study' id='study' src='./assets/study.svg' alt='study-icon'>
-            <img class='meditate' id='meditate' src='./assets/meditate.svg' alt='meditate-icon'>
-            <img class='exercise' id='exercise' src='./assets/exercise.svg' alt='exercise-icon'>
+            <div id='studyDiv'>  <img class='study' id='study' src='./assets/study.svg' alt='study-icon'> </div>
+            <div id='meditateDiv'>  <img class='meditate' id='meditate' src='./assets/meditate.svg' alt='meditate-icon'> </div>
+            <div id='exerciseDiv'>  <img class='exercise' id='exercise' src='./assets/exercise.svg' alt='exercise-icon'> </div>
           </section>
           <form class='input-form' id='form'>
             <label for='activity-description'>What would you like to accomplish during this time?</label>
@@ -27,7 +27,7 @@
             <input type='text' id='seconds' name='seconds'><br>
             <input type='submit' class='submit' id='submit' value='Start Activity'>
           </form>
-        </div>
+        </section>
       </aside>
       <aside class='right' id='rightAside'>
         <h1 class='activities'>Past Activities</h1>

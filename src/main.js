@@ -13,12 +13,26 @@ var imageSection = document.querySelector('#imageSection');
 var form = document.querySelector('#form');
 var rightAside = document.querySelector('#rightAside');
 
+var studyDiv = document.querySelector('#studyDiv');
+var meditateDiv = document.querySelector('#meditateDiv');
+var exerciseDiv = document.querySelector('#exerciseDiv')
+
 //Event Listeners
-studyImg.addEventListener("click", changeColor);
+studyDiv.addEventListener('click', changeColor);
+meditateDiv.addEventListener('click', changeColor);
+exerciseDiv.addEventListener('click', changeColor);
 // meditateImg.addEventListener('click');
 // exerciseImg.addEventListener('click');
 
 //Event Handlers
 function changeColor(){
-studyImg.innerHTML = `<img src="./assets/study-active.svg" alt="study-active"/>`
+if (event.target.id === 'study'){
+  studyDiv.innerHTML = `<img src="assets/study-active.svg">`
+}
+if (event.target.id === 'meditate'){
+  meditateDiv.innerHTML = `<img src="assets/meditate-active.svg">`
+}
+if (event.target.id === 'exercise'){
+  exerciseDiv.innerHTML = `<img src="assets/exercise-active.svg">`
+}
 };
