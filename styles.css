@@ -48,7 +48,9 @@ header {
 .activity-container{
   background-color: #46424D;
   height: 40rem;
+  display: flex;
   justify-content: space-evenly;
+  flex-direction: column;
 }
 
 .category-container {
@@ -66,10 +68,18 @@ header {
   align-items: center;
 }
 
+h3 {
+ color: #FFF;
+ margin-left: 1.5em;
+ margin-top: 2em;
+ margin-bottom: 0;
+}
+
 h6 {
   margin-top: 0.3em;
   font-size: 1.2em;
   font-weight: bold;
+  color: #FFF;
 }
 
 .input-container {
@@ -90,7 +100,7 @@ h6 {
 img {
   height: 3vh;
   width: 5vh;
-  margin-top: 0.5em;
+  margin-top: 0.7em;
 }
 
 input {
