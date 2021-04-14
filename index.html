@@ -11,7 +11,7 @@
     <main id='main'>
       <aside class='left'>
         <h1 class='activities'> New Activity</h1>
-        <section>
+        <section class='activity-container'>
           <h3>Select a category:</h3>
           <!-- <section id='imageSection' class="image-section">
             <div id='studyDiv'>  <img class='study' id='study' src='./assets/study.svg' alt='study-icon'> </div>
@@ -19,27 +19,31 @@
             <div id='exerciseDiv'>  <img class='exercise' id='exercise' src='./assets/exercise.svg' alt='exercise-icon'> </div>
           </section> -->
           <form class='input-form' id='form'>
-            <div id='addListener'>
-              <label>
+            <div class='category-container' id='addListener'>
+              <label class='category-box'>
                 <input type="radio" name="activiy" value="study" id='study'>
                 <img id='studyImgChng' src="./assets/study.svg">
+                <h6>Study</h6>
               </label>
-              <label>
+              <label class='category-box'>
                 <input type="radio" name="activiy" value="big" id='meditate'>
                 <img id='meditateImg' src="./assets/meditate.svg">
+                <h6>Meditate</h6>
               </label>
-              <label>
+              <label class='category-box'>
                 <input type="radio" name="activiy" value="big" id='exercise'>
                 <img id='exerciseImg' src="./assets/exercise.svg">
+                <h6>Exercise</h6>
               </label>
             </div>
-            <label for='activity-description'>What would you like to accomplish during this time?</label>
-            <input type='text' class='activity-description' id='activityDescription' name='activity-description'> <br>
-            <label for='minutes'>Minutes</label>
-            <input type='text' id='minutes' name='minutes' pattern="[0-9]+">
-            <label for='seconds'>Seconds</label>
-            <input type='text' id='seconds' name='seconds' pattern="[0-9]+"><br>
-            <input type='submit' class='submit' id='submit' value='Start Activity'>
+            <div class='input-container'>
+              <label for='activity-description'> What would you like to accomplish during this time?</label>
+              <input type='text' class='activity-description' id='activityDescription' name='activity-description'> <br>
+              <label for='minutes'>Minutes</label>
+              <input type='text' id='minutes' name='minutes' pattern="[0-9]+">
+              <label for='seconds'>Seconds</label>
+              <input type='text' id='seconds' name='seconds' pattern="[0-9]+"><br>
+              <input type='submit' class='submit' id='submit' value='Start Activity'>
           </form>
         </section>
       </aside>

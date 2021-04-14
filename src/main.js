@@ -77,7 +77,7 @@ function changeMe(){
 //   }
 // };
 
-//hide and show the two different images off .checked 
+//hide and show the two different images off .checked
 // terinary functions for the change images
 
 // function isChecked(){
