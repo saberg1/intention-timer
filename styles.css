@@ -35,21 +35,38 @@ header {
   background-color: #46424D;
   color: #FFF;
   text-align: center;
-
 }
 
-[type=radio] { 
+
+[type=radio] {
   position: absolute;
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* div {
+.activity-container{
   background-color: #46424D;
   height: 40rem;
   justify-content: space-evenly;
-} */
+}
+
+.category-container {
+  height: 30vh;
+  display: flex;
+  justify-content: space-around;
+}
+
+.category-box {
+  border: 1px solid #FFF;
+}
+
+.input-container {
+  height: 30vh;
+  display: flex;
+  align-content: space-evenly;
+  flex-flow: wrap;
+}
 
 .image-section {
   justify-content: space-between;
