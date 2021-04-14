@@ -13,12 +13,26 @@
         <h1 class='activities'> New Activity</h1>
         <section>
           <h3>Select a category:</h3>
-          <section id='imageSection' class="image-section">
+          <!-- <section id='imageSection' class="image-section">
             <div id='studyDiv'>  <img class='study' id='study' src='./assets/study.svg' alt='study-icon'> </div>
             <div id='meditateDiv'>  <img class='meditate' id='meditate' src='./assets/meditate.svg' alt='meditate-icon'> </div>
             <div id='exerciseDiv'>  <img class='exercise' id='exercise' src='./assets/exercise.svg' alt='exercise-icon'> </div>
-          </section>
+          </section> -->
           <form class='input-form' id='form'>
+            <div id='addListener'>
+              <label>
+                <input type="radio" name="activiy" value="study" id='study'>
+                <img id='studyImgChng' src="./assets/study.svg">
+              </label>
+              <label>
+                <input type="radio" name="activiy" value="big" id='meditate'>
+                <img id='meditateImg' src="./assets/meditate.svg">
+              </label>
+              <label>
+                <input type="radio" name="activiy" value="big" id='exercise'>
+                <img id='exerciseImg' src="./assets/exercise.svg">
+              </label>
+            </div>
             <label for='activity-description'>What would you like to accomplish during this time?</label>
             <input type='text' class='activity-description' id='activityDescription' name='activity-description'> <br>
             <label for='minutes'>Minutes</label>
