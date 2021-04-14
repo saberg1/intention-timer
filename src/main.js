@@ -68,6 +68,11 @@ function submitData(){
 
 function displayTimer() {
   newActivity.innerText = 'Current Activity'
+  activityContainer.innerHTML = `
+    <svg height="500" width="500">
+      <circle cx='250' cy='350' r='125' />
+    </svg>
+    `
 }
 // function startTimer(duration, display) {
 //     var timer = duration, minutes, seconds;
@@ -88,9 +93,7 @@ function displayTimer() {
 
 // replace new activity with Current Activity
 // replace reamining innerHTML with timer and countdown/start button
-// <svg height="100" width="100">
-  // <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
-// </svg>
+
 // goal: start button in minddle of circle with above countdown
 // inputs: input values from form field for minutes and seconds and color from chosen category
 // output: new TIMER
