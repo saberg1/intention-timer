@@ -129,3 +129,15 @@ input {
     border-bottom: 1px solid #FFF;
     width: 400px;
 }
+
+.study {
+  color: #B3FD78;
+}
+
+.meditate {
+  color: #C278FD;
+}
+
+.exercise {
+  color: #FD8078;
+}

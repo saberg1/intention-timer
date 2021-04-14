@@ -26,6 +26,9 @@ var meditateImg = document.querySelector('#meditateImg');
 var exerciseImg = document.querySelector('#exerciseImg');
 var studyImg = document.querySelector('#studyImgChng');
 var activityCategory = document.getElementsByName('activity');
+
+var newActivity = document.querySelector('#newActivity');
+var activityContainer = document.querySelector('#activityContainer')
 //Event Listeners
 divInputs.addEventListener('click', changeMe);
 submitBtn.addEventListener('click', submitData);
@@ -59,4 +62,42 @@ function submitData(){
   if (activityInput.value || minutesInput.value || secondsInput.value){
     currentActivity = new Activity(activity, activityInput.value, minutesInput.value, secondsInput.value)
   }
+  displayTimer();
 };
+
+
+function displayTimer() {
+  newActivity.innerText = 'Current Activity'
+  activityContainer.innerHTML = `
+    <svg height="500" width="500">
+      <circle cx='250' cy='350' r='125' />
+    </svg>
+    `
+}
+// function startTimer(duration, display) {
+//     var timer = duration, minutes, seconds;
+//     setInterval(function () {
+//         minutes = parseInt(timer / 60, 10)
+//         seconds = parseInt(timer % 60, 10);
+//
+//         minutes = minutes < 10 ? "0" + minutes : minutes;
+//         seconds = seconds < 10 ? "0" + seconds : seconds;
+//
+//         display.textContent = minutes + ":" + seconds;
+//
+//         if (--timer < 0) {
+//             timer = duration;
+//         }
+//     }, 1000);
+// }
+
+// replace new activity with Current Activity
+// replace reamining innerHTML with timer and countdown/start button
+
+// goal: start button in minddle of circle with above countdown
+// inputs: input values from form field for minutes and seconds and color from chosen category
+// output: new TIMER
+// submit form button changes page view to timer
+// function timer takes inputs minutes and second and displays on countdown
+// takes color of selected category and displays as cirlce
+//
