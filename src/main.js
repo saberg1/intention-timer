@@ -18,6 +18,10 @@ var studyDiv = document.querySelector('#studyDiv');
 var meditateDiv = document.querySelector('#meditateDiv');
 var exerciseDiv = document.querySelector('#exerciseDiv');
 
+var studyContainer = document.querySelector('#studyContainer');
+var meditateContainer = document.querySelector('#meditateContainer');
+var exerciseContainer = document.querySelector('#exerciseContainer');
+
 //Global Variables
 var currentActivity;
 var activities = [];
@@ -40,7 +44,7 @@ function changeMe(){
     meditateImg.src = "./assets/meditate.svg"
     exerciseImg.src = "./assets/exercise.svg"
     studyRadio.checked ? studyImg.src = "./assets/study-active.svg" : studyImg.src = "./assets/study.svg"
-    categoryBox.style.border = "2px #C278FD solid"
+    studyContainer.style.border = "2px #C278FD solid"
   }
   if(meditateRadio.checked){
     exerciseImg.src = "./assets/exercise.svg"
