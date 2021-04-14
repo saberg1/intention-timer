@@ -38,6 +38,13 @@ header {
 
 }
 
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
 /* div {
   background-color: #46424D;
   height: 40rem;
