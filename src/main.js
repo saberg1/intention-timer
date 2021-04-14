@@ -29,6 +29,7 @@ var activityCategory = document.getElementsByName('activity');
 
 var newActivity = document.querySelector('#newActivity');
 var activityContainer = document.querySelector('#activityContainer')
+
 //Event Listeners
 divInputs.addEventListener('click', changeMe);
 submitBtn.addEventListener('click', submitData);
@@ -39,6 +40,7 @@ function changeMe(){
     meditateImg.src = "./assets/meditate.svg"
     exerciseImg.src = "./assets/exercise.svg"
     studyRadio.checked ? studyImg.src = "./assets/study-active.svg" : studyImg.src = "./assets/study.svg"
+    categoryBox.style.border = "2px #C278FD solid"
   }
   if(meditateRadio.checked){
     exerciseImg.src = "./assets/exercise.svg"
@@ -69,9 +71,7 @@ function submitData(){
 function displayTimer() {
   newActivity.innerText = 'Current Activity'
   activityContainer.innerHTML = `
-    <svg height="500" width="500">
-      <circle cx='250' cy='350' r='125' />
-    </svg>
+    <a href="" class="btn btn-start">START</a>
     `
 }
 // function startTimer(duration, display) {
