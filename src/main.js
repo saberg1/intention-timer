@@ -14,9 +14,9 @@ var imageSection = document.querySelector('#imageSection');
 var form = document.querySelector('#form');
 var rightAside = document.querySelector('#rightAside');
 
-var studyDiv = document.querySelector('#studyDiv');
-var meditateDiv = document.querySelector('#meditateDiv');
-var exerciseDiv = document.querySelector('#exerciseDiv');
+// var studyDiv = document.querySelector('#studyDiv');
+// var meditateDiv = document.querySelector('#meditateDiv');
+// var exerciseDiv = document.querySelector('#exerciseDiv');
 
 var studyContainer = document.querySelector('#studyContainer');
 var meditateContainer = document.querySelector('#meditateContainer');
@@ -79,31 +79,36 @@ function submitData(){
 
 function displayTimer() {
   newActivity.innerText = 'Current Activity'
+  var display = '04:00'
   activityContainer.innerHTML = `
+  <div id='testID'> </div>
     <a href="" class="btn btn-start">START</a>
     `
+    setup();
 }
-// function startTimer(duration, display) {
-//     var timer = duration, minutes, seconds;
-//     setInterval(function () {
-//         minutes = parseInt(timer / 60, 10)
-//         seconds = parseInt(timer % 60, 10);
-//
-//         minutes = minutes < 10 ? "0" + minutes : minutes;
-//         seconds = seconds < 10 ? "0" + seconds : seconds;
-//
-//         display.textContent = minutes + ":" + seconds;
-//
-//         if (--timer < 0) {
-//             timer = duration;
-//         }
-//     }, 1000);
-// }
 
-// replace new activity with Current Activity
-// replace reamining innerHTML with timer and countdown/start button
+var counter = 0
+var timeleft = 144;
+function setup(){
+  activityContainer.innerHTML = convertToSeconds(timeleft - counter)
+  setInterval(timeIt, 1000)
+}
+function timeIt(){
+  counter++
+  activityContainer.innerHTML = convertToSeconds(timeleft - counter)
+}
+function convertToSeconds(s){
+   var min = Math.floor(s / 60)
+   var sec = s % 60
+   min = min < 10 ? '0' + min : min
+  sec = sec < 10 ? '0' + sec : sec
+   return `${min}:${sec}`
+}
 
-// goal: start button in minddle of circle with above countdown
+
+
+
+
 // inputs: input values from form field for minutes and seconds and color from chosen category
 // output: new TIMER
 // submit form button changes page view to timer
