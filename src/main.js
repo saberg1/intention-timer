@@ -44,24 +44,22 @@ function changeMe(){
     meditateImg.src = "./assets/meditate.svg"
     exerciseImg.src = "./assets/exercise.svg"
     studyRadio.checked ? studyImg.src = "./assets/study-active.svg" : studyImg.src = "./assets/study.svg"
-    // studyContainer.style.border = "2px #B3FD78 solid"
     studyContainer.classList.toggle('study')
   }
   if(meditateRadio.checked){
     exerciseImg.src = "./assets/exercise.svg"
     studyImg.src = "./assets/study.svg"
     meditateRadio.checked ? meditateImg.src = "./assets/meditate-active.svg" : meditateImg.src = "./assets/meditate.svg"
-    // meditateContainer.style.border = "2px #C278FD solid"
     meditateContainer.classList.toggle('meditate')
   }
   if(exerciseRadio.checked){
     studyImg.src = "./assets/study.svg"
     meditateImg.src = "./assets/meditate.svg"
     exerciseRadio.checked ? exerciseImg.src = "./assets/exercise-active.svg" : exerciseImg.src = "./assets/exercise.svg"
-    // exerciseContainer.style.border = "2px #FD8078 solid"
     exerciseContainer.classList.toggle('exercise')
   }
 }
+
 function submitData(){
   var activity;
   for (var i = 0; i < activityCategory.length; i++){
@@ -81,30 +79,56 @@ function displayTimer() {
   newActivity.innerText = 'Current Activity'
   var display = '04:00'
   activityContainer.innerHTML = `
-  <div id='testID'> </div>
+  <div id='testID'>Button </div>
     <a href="" class="btn btn-start">START</a>
+    <button id='startBtn'>Start</button>
     `
-    setup();
 }
 
-var counter = 0
-var timeleft = 144;
-function setup(){
-  activityContainer.innerHTML = convertToSeconds(timeleft - counter)
-  setInterval(timeIt, 1000)
-}
-function timeIt(){
-  counter++
-  activityContainer.innerHTML = convertToSeconds(timeleft - counter)
-}
-function convertToSeconds(s){
-   var min = Math.floor(s / 60)
-   var sec = s % 60
-   min = min < 10 ? '0' + min : min
-  sec = sec < 10 ? '0' + sec : sec
-   return `${min}:${sec}`
+// var startBtn = document.querySelector('#')
+
+activityContainer.addEventListener('click', updateTimer)
+
+function updateTimer() {
+  if(event.target.id === 'startBtn') {
+    var startMin = 5;
+    var startSec = 20;
+    var time = startMin*60 + startSec
+    setInterval(function() {
+      var min = Math.floor(time/60)
+      var sec = time % 60
+
+      min = min <10 ? '0' + min : min
+      sec = sec <10 ? '0' + sec : sec
+
+      activityContainer.innerHTML = `${min}: ${sec}`
+
+      time--
+    }
+    ,1000);
+  }
+
+  // event.preventDefault();
 }
 
+
+// var counter = 0
+// var timeleft = 144;
+// function setup(){
+//   activityContainer.innerHTML = convertToSeconds(timeleft - counter)
+//   setInterval(timeIt, 1000)
+// }
+// function timeIt(){
+//   counter++
+//   activityContainer.innerHTML = convertToSeconds(timeleft - counter)
+// }
+// function convertToSeconds(s){
+//    var min = Math.floor(s / 60)
+//    var sec = s % 60
+//    min = min < 10 ? '0' + min : min
+//   sec = sec < 10 ? '0' + sec : sec
+//    return `${min}:${sec}`
+// }
 
 
 

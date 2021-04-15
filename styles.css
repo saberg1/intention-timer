@@ -12,6 +12,7 @@ Error: #EFB7EC */
   border: 2px solid red;
   font-family: Montserrat;
 }
+
 .hidden {
   display: none;
 }
@@ -37,6 +38,14 @@ header {
   text-align: center;
 }
 
+.left {
+  width: 100vw;
+  margin: 30px;
+}
+
+.right {
+  margin: 30px;
+}
 
 [type=radio] {
   position: absolute;
@@ -54,13 +63,14 @@ header {
 }
 
 .category-container {
-  height: 30vh;
+  height: 20vh;
   display: flex;
   justify-content: space-around;
 }
 
 .category-box {
   border: 2px solid #FFF;
+  color: #FFF;
   height: 10vh;
   width: 15vw;
   display: flex;
@@ -79,23 +89,20 @@ h6 {
   margin-top: 0.3em;
   font-size: 1.2em;
   font-weight: bold;
-  color: #FFF;
 }
 
 .input-container {
-  height: 30vh;
+  height: 40vh;
   display: flex;
-  align-content: space-evenly;
-  flex-flow: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .image-section {
   justify-content: space-between;
 }
 
-.left {
-  width: 100vw;
-}
+
 
 img {
   height: 3vh;
@@ -109,6 +116,34 @@ input {
     border-bottom: 1px solid #FFF;
 }
 
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+}
+
+.minutes-seconds {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.minutes {
+  display: flex;
+  flex-direction: column;
+  color: #FFF;
+  width: 20vw;
+}
+
+.seconds {
+  display: flex;
+  flex-direction: column;
+  color: #FFF;
+  width: 20vw;
+}
+
+
 .submit {
   background-color: #FFF;
   border: none;
@@ -116,30 +151,35 @@ input {
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   margin: 4px 2px;
+  margin-right: 5.5vw;
   cursor: pointer;
   border-radius: 16px;
   text-transform: uppercase;
+  align-self: flex-end;;
 }
 
 .activity-description{
   background: transparent;
     border: none;
     border-bottom: 1px solid #FFF;
-    width: 400px;
+    width: 45.5vw;
+    color: #FFF;
 }
 
 .study {
   border: 2px solid #B3FD78;
+  color: #B3FD78;
 }
 
 .meditate {
   border: 2px solid #C278FD;
+  color: #C278FD;
 }
 
 .exercise {
   border: 2px solid #FD8078;
+  color: #FD8078;
 }
 
 .btn-start {
