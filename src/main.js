@@ -51,19 +51,19 @@ function changeMe(){
     exerciseRadio.checked ? exerciseImg.src = "./assets/exercise-active.svg" : exerciseImg.src = "./assets/exercise.svg"
   }
 }
-function submitData(){
-  var activity;
-  for (var i = 0; i < activityCategory.length; i++){
-    if (activityCategory[i].checked){
-      activity = activityCategory[i].value;
-    }
-  }
-  event.preventDefault()
-  if (activityInput.value || minutesInput.value || secondsInput.value){
-    currentActivity = new Activity(activity, activityInput.value, minutesInput.value, secondsInput.value)
-  }
-  displayTimer();
-};
+// function submitData(){
+//   var activity;
+//   for (var i = 0; i < activityCategory.length; i++){
+//     if (activityCategory[i].checked){
+//       activity = activityCategory[i].value;
+//     }
+//   }
+//   event.preventDefault()
+//   if (activityInput.value || minutesInput.value || secondsInput.value){
+//     currentActivity = new Activity(activity, activityInput.value, minutesInput.value, secondsInput.value)
+//   }
+//   displayTimer();
+// };
 
 
 function displayTimer() {
@@ -74,6 +74,8 @@ function displayTimer() {
     </svg>
     `
 }
+
+
 // function startTimer(duration, display) {
 //     var timer = duration, minutes, seconds;
 //     setInterval(function () {
