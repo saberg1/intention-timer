@@ -86,7 +86,7 @@ function displayTimer() {
   activityContainer.innerHTML = `
     <div>${min}:${sec}</div>
     <a href="" id="btn" class="btn btn-start">START</a>
-    
+
     `
 }
 
@@ -95,19 +95,22 @@ function updateTimer(event) {
     var startMin = parseInt(currentActivity.minutes);
     var startSec = parseInt(currentActivity.seconds);
     var time = startMin*60 + startSec
-    setInterval(function() {
+  var myInterval =  setInterval(function() {
       var min = Math.floor(time/60)
       var sec = time % 60
-      
+
       min = min <10 ? '0' + min : min
       sec = sec <10 ? '0' + sec : sec
-      
+
       activityContainer.innerHTML = `
-      ${min}:${sec}
+      <h4>${min}:${sec}</h4>
       <a href="" id="btn" class="btn btn-start">START</a>
       `
-      
-      time--
+
+    if (--time < 0)  {
+      clearInterval(myInterval);
+      doneFunction();
+    }
     }
     ,1000);
     currentActivity.startTimer()
@@ -115,9 +118,16 @@ function updateTimer(event) {
   }
 }
 
+function doneFunction() {
+  activityContainer.innerHTML = `
+  <h4>00:00</h4>
+  <a href="" id="btn" class="btn btn-start">COMPLETE</a>
+  `
+}
+
 function onlyNumberKey(event) {
   var ASCIICode = (event.which) ? event.which : event.keyCode
-  
+
   if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
       return false;
   return true;
