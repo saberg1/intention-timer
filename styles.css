@@ -121,7 +121,7 @@ input {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 10vh;  
+  height: 10vh;
 }
 
 .minutes-seconds {
@@ -132,11 +132,15 @@ input {
 .minutes {
   display: flex;
   flex-direction: column;
+  color: #FFF;
+  width: 20vw;
 }
 
 .seconds {
   display: flex;
   flex-direction: column;
+  color: #FFF;
+  width: 20vw;
 }
 
 
@@ -148,6 +152,7 @@ input {
   text-align: center;
   text-decoration: none;
   margin: 4px 2px;
+  margin-right: 5.5vw;
   cursor: pointer;
   border-radius: 16px;
   text-transform: uppercase;
@@ -158,7 +163,8 @@ input {
   background: transparent;
     border: none;
     border-bottom: 1px solid #FFF;
-    width: 400px;
+    width: 45.5vw;
+    color: #FFF;
 }
 
 .study {
