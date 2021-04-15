@@ -103,7 +103,7 @@ function updateTimer(event) {
       sec = sec <10 ? '0' + sec : sec
 
       activityContainer.innerHTML = `
-      ${min}:${sec}
+      <h4>${min}:${sec}</h4>
       <a href="" id="btn" class="btn btn-start">START</a>
       `
 
@@ -119,7 +119,10 @@ function updateTimer(event) {
 }
 
 function doneFunction() {
-  console.log('done!')
+  activityContainer.innerHTML = `
+  <h4>00:00</h4>
+  <a href="" id="btn" class="btn btn-start">COMPLETE</a>
+  `
 }
 
 function onlyNumberKey(event) {
