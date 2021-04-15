@@ -44,17 +44,19 @@ function changeMe(){
     meditateImg.src = "./assets/meditate.svg"
     exerciseImg.src = "./assets/exercise.svg"
     studyRadio.checked ? studyImg.src = "./assets/study-active.svg" : studyImg.src = "./assets/study.svg"
-    studyContainer.style.border = "2px #C278FD solid"
+    studyContainer.style.border = "2px #B3FD78 solid"
   }
   if(meditateRadio.checked){
     exerciseImg.src = "./assets/exercise.svg"
     studyImg.src = "./assets/study.svg"
     meditateRadio.checked ? meditateImg.src = "./assets/meditate-active.svg" : meditateImg.src = "./assets/meditate.svg"
+    meditateContainer.style.border = "2px #C278FD solid"
   }
   if(exerciseRadio.checked){
     studyImg.src = "./assets/study.svg"
     meditateImg.src = "./assets/meditate.svg"
     exerciseRadio.checked ? exerciseImg.src = "./assets/exercise-active.svg" : exerciseImg.src = "./assets/exercise.svg"
+    exerciseContainer.style.border = "2px #FD8078 solid"
   }
 }
 function submitData(){
