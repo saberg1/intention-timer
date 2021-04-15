@@ -131,15 +131,15 @@ input {
 }
 
 .study {
-  color: #B3FD78;
+  border: 2px solid #B3FD78;
 }
 
 .meditate {
-  color: #C278FD;
+  border: 2px solid #C278FD;
 }
 
 .exercise {
-  color: #FD8078;
+  border: 2px solid #FD8078;
 }
 
 .btn-start {
