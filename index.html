@@ -39,11 +39,11 @@
               <div class='minutes-seconds'>
                 <div class='minutes'>
                   <label for='minutes'>Minutes</label>
-                  <input type='text' class='minutes' id='minutes' name='minutes' pattern="[0-9]+">
+                  <input onkeypress="return onlyNumberKey(event)" type='text' class='minutes' id='minutes' name='minutes' pattern="[0-9]+">
                 </div>
                 <div class='seconds'>
                   <label for='seconds'>Seconds</label>
-                  <input type='text' class='seconds' id='seconds' name='seconds' pattern="[0-9]+"><br>
+                  <input onkeypress="return onlyNumberKey(event)" type='text' class='seconds' id='seconds' name='seconds' pattern="[0-9]+"><br>
                 </div>
               </div>
               <input type='submit' class='submit' id='submit' value='Start Activity'>

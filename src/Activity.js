@@ -8,7 +8,7 @@ class Activity{
     this.completed = false;
   }
   startTimer(){
-
+    // console.log('timer started')
   }
   markComplete(){
 
