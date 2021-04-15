@@ -9,7 +9,7 @@ Exercise: #FD8078
 Error: #EFB7EC */
 
 * {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   font-family: Montserrat;
 }
 
@@ -183,7 +183,7 @@ input {
 }
 
 .btn-start {
-  background: #46424D
+  background: #46424D;
   text-align: center;
   width: 200px;
   height: 200px;

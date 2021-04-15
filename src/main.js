@@ -22,10 +22,6 @@ var studyContainer = document.querySelector('#studyContainer');
 var meditateContainer = document.querySelector('#meditateContainer');
 var exerciseContainer = document.querySelector('#exerciseContainer');
 
-//Global Variables
-var currentActivity;
-var activities = [];
-
 var meditateImg = document.querySelector('#meditateImg');
 var exerciseImg = document.querySelector('#exerciseImg');
 var studyImg = document.querySelector('#studyImgChng');
@@ -34,9 +30,15 @@ var activityCategory = document.getElementsByName('activity');
 var newActivity = document.querySelector('#newActivity');
 var activityContainer = document.querySelector('#activityContainer')
 
+//Global Variables
+var currentActivity;
+var activities = [];
+
 //Event Listeners
 divInputs.addEventListener('click', changeMe);
 submitBtn.addEventListener('click', submitData);
+
+activityContainer.addEventListener('click', updateTimer)
 
 //Event Handlers
 function changeMe(){
@@ -77,59 +79,49 @@ function submitData(){
 
 function displayTimer() {
   newActivity.innerText = 'Current Activity'
-  var display = '04:00'
+  var min = parseInt(currentActivity.minutes);
+  var sec = parseInt(currentActivity.seconds);
+  min = min <10 ? '0' + min : min
+  sec = sec <10 ? '0' + sec : sec
   activityContainer.innerHTML = `
-  <div id='testID'>Button </div>
-    <a href="" class="btn btn-start">START</a>
-    <button id='startBtn'>Start</button>
+    <div>${min}:${sec}</div>
+    <a href="" id="btn" class="btn btn-start">START</a>
+    
     `
 }
 
-// var startBtn = document.querySelector('#')
-
-activityContainer.addEventListener('click', updateTimer)
-
-function updateTimer() {
-  if(event.target.id === 'startBtn') {
-    var startMin = 5;
-    var startSec = 20;
+function updateTimer(event) {
+  if(event.target.id === 'btn') {
+    var startMin = parseInt(currentActivity.minutes);
+    var startSec = parseInt(currentActivity.seconds);
     var time = startMin*60 + startSec
     setInterval(function() {
       var min = Math.floor(time/60)
       var sec = time % 60
-
+      
       min = min <10 ? '0' + min : min
       sec = sec <10 ? '0' + sec : sec
-
-      activityContainer.innerHTML = `${min}: ${sec}`
-
+      
+      activityContainer.innerHTML = `
+      ${min}:${sec}
+      <a href="" id="btn" class="btn btn-start">START</a>
+      `
+      
       time--
     }
     ,1000);
+    currentActivity.startTimer()
+    event.preventDefault()
   }
-
-  // event.preventDefault();
 }
 
-
-// var counter = 0
-// var timeleft = 144;
-// function setup(){
-//   activityContainer.innerHTML = convertToSeconds(timeleft - counter)
-//   setInterval(timeIt, 1000)
-// }
-// function timeIt(){
-//   counter++
-//   activityContainer.innerHTML = convertToSeconds(timeleft - counter)
-// }
-// function convertToSeconds(s){
-//    var min = Math.floor(s / 60)
-//    var sec = s % 60
-//    min = min < 10 ? '0' + min : min
-//   sec = sec < 10 ? '0' + sec : sec
-//    return `${min}:${sec}`
-// }
-
+function onlyNumberKey(event) {
+  var ASCIICode = (event.which) ? event.which : event.keyCode
+  
+  if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+      return false;
+  return true;
+}
 
 
 
