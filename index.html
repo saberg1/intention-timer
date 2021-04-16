@@ -12,42 +12,43 @@
       <aside class='left'>
         <h1 class='activities' id='newActivity'> New Activity</h1>
         <section class='activity-container' id='activityContainer'>
-          <h3>Select a category:</h3>
+          <h2>Select a category:</h2>
           <form class='input-form' id='form'>
             <div class='category-container' id='addListener'>
               <label class='category-box' id='studyContainer'>
                 <input type="radio" name="activity" value="Study" id='study'>
                 <img id='studyImgChng' src="./assets/study.svg">
-                <h6>Study</h6>
+                <h3>Study</h3>
               </label>
               <label class='category-box' id='meditateContainer'>
                 <input type="radio" name="activity" value="Meditate" id='meditate'>
                 <img id='meditateImg' src="./assets/meditate.svg">
-                <h6>Meditate</h6>
+                <h3>Meditate</h3>
               </label>
               <label class='category-box' id='exerciseContainer'>
                 <input type="radio" name="activity" value="Exercise" id='exercise'>
                 <img id='exerciseImg' src="./assets/exercise.svg">
-                <h6>Exercise</h6>
+                <h3>Exercise</h3>
               </label>
             </div>
             <div class='input-container'>
-              <div class='description'>
+              <section class='description'>
                 <label for='activity-description'> What would you like to accomplish during this time?</label>
                 <input type='text' class='activity-description' id='activityDescription' name='activity-description'> <br>
                 <div id='activityDivInput'> </div>
-              </div>
-              <div class='minutes-seconds'>
+              </section>
+              <section class='minutes-seconds'>
                 <div class='minutes'>
                   <label for='minutes'>Minutes</label>
                   <input onkeypress="return validateMinutes(event)" type='text' class='minutes' id='minutes' name='minutes' pattern="[0-9]+">
-                  <div id='minutesDivInput'> </div>
+                  <div id='minutesDivInput'> </div><br>
+                </div>
                 <div class='seconds'>
                   <label for='seconds'>Seconds</label>
-                  <input onkeypress="return validateSeconds(event)" type='text' class='seconds' id='seconds' name='seconds' pattern="[0-9]+"><br>
-                  <div id='secondsDivInput'> </div>
+                  <input onkeypress="return validateSeconds(event)" type='text' class='seconds' id='seconds' name='seconds' pattern="[0-9]+">
+                  <div id='secondsDivInput'> </div><br>
                 </div>
-              </div>
+              </section>
               <input type='submit' class='submit' id='submit' value='Start Activity'>
             </div>
           </form>

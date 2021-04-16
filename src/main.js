@@ -84,7 +84,8 @@ function displayTimer() {
   min = min <10 ? '0' + min : min
   sec = sec <10 ? '0' + sec : sec
   activityContainer.innerHTML = `
-    <div>${min}:${sec}</div>
+    <h4>${activityInput.value}</h4>
+    <h5>${min}:${sec}</h5>
     <a href="" id="btn" class="btn btn-start">START</a>
 
     `
@@ -103,13 +104,14 @@ function updateTimer(event) {
       sec = sec <10 ? '0' + sec : sec
 
       activityContainer.innerHTML = `
-      <h4>${min}:${sec}</h4>
+      <h4>${activityInput.value}</h4>
+      <h5>${min}:${sec}</h5>
       <a href="" id="btn" class="btn btn-start">START</a>
       `
 
     if (--time < 0)  {
       clearInterval(myInterval);
-      doneFunction();
+      completeActivity();
     }
     }
     ,1000);
@@ -118,9 +120,10 @@ function updateTimer(event) {
   }
 }
 
-function doneFunction() {
+function completeActivity() {
   activityContainer.innerHTML = `
-  <h4>00:00</h4>
+  <h4>${activityInput.value}</h4>
+  <h5>00:00</h5>
   <a href="" id="btn" class="btn btn-start">COMPLETE</a>
   `
 }
@@ -131,8 +134,8 @@ function validateSeconds(event) {
   if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)){
     console.log('Test seconds')
     if (!secondsInput.value){
-      secondsDivInput.innerHTML = `<img src="assets/warning.svg">
-      <div>A number is required. </div>`
+      secondsDivInput.innerHTML = `
+      <img src="assets/warning.svg" <span>A number is required.</span>`
     }
       return false};
   return true;
@@ -144,12 +147,13 @@ function validateMinutes(event) {
   if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)){
     console.log('Test minutes')
     if (!minutesInput.value){
-      minutesDivInput.innerHTML = `<img src="assets/warning.svg">
-      <div> A number is required. </div>`
+      minutesDivInput.innerHTML = `
+      <img src="assets/warning.svg" <span>A number is required.</span>`
     }
       return false};
   return true;
 }
+
 
 // function validateSeconds(event){
 //   validateTime(secondsInput, secondsDivInput)
