@@ -154,6 +154,7 @@ function validateMinutes(event) {
   return true;
 }
 
+
 // function validateSeconds(event){
 //   validateTime(secondsInput, secondsDivInput)
 // };
