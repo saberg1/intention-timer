@@ -35,15 +35,17 @@
               <div class='description'>
                 <label for='activity-description'> What would you like to accomplish during this time?</label>
                 <input type='text' class='activity-description' id='activityDescription' name='activity-description'> <br>
+                <div id='activityDivInput'> </div>
               </div>
               <div class='minutes-seconds'>
                 <div class='minutes'>
                   <label for='minutes'>Minutes</label>
-                  <input onkeypress="return onlyNumberKey(event)" type='text' class='minutes' id='minutes' name='minutes' pattern="[0-9]+">
-                </div>
+                  <input onkeypress="return validateMinutes(event)" type='text' class='minutes' id='minutes' name='minutes' pattern="[0-9]+">
+                  <div id='minutesDivInput'> </div>
                 <div class='seconds'>
                   <label for='seconds'>Seconds</label>
-                  <input onkeypress="return onlyNumberKey(event)" type='text' class='seconds' id='seconds' name='seconds' pattern="[0-9]+"><br>
+                  <input onkeypress="return validateSeconds(event)" type='text' class='seconds' id='seconds' name='seconds' pattern="[0-9]+"><br>
+                  <div id='secondsDivInput'> </div>
                 </div>
               </div>
               <input type='submit' class='submit' id='submit' value='Start Activity'>

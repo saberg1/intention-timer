@@ -14,9 +14,9 @@ var imageSection = document.querySelector('#imageSection');
 var form = document.querySelector('#form');
 var rightAside = document.querySelector('#rightAside');
 
-// var studyDiv = document.querySelector('#studyDiv');
-// var meditateDiv = document.querySelector('#meditateDiv');
-// var exerciseDiv = document.querySelector('#exerciseDiv');
+var minutesDivInput = document.querySelector('#minutesDivInput');
+var secondsDivInput = document.querySelector('#secondsDivInput');
+var activityDivInput = document.querySelector('#activityDivInput');
 
 var studyContainer = document.querySelector('#studyContainer');
 var meditateContainer = document.querySelector('#meditateContainer');
@@ -125,19 +125,26 @@ function doneFunction() {
   `
 }
 
-function onlyNumberKey(event) {
+function validateSeconds(event) {
   var ASCIICode = (event.which) ? event.which : event.keyCode
 
-  if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
-      return false;
+  if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)){
+    console.log('Test seconds')
+    if (!secondsInput.value){
+      secondsDivInput.innerHTML = `<div> A number is required. </div>`
+    }
+      return false};
   return true;
 }
 
+function validateMinutes(event) {
+  var ASCIICode = (event.which) ? event.which : event.keyCode
 
-
-// inputs: input values from form field for minutes and seconds and color from chosen category
-// output: new TIMER
-// submit form button changes page view to timer
-// function timer takes inputs minutes and second and displays on countdown
-// takes color of selected category and displays as cirlce
-//
+  if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)){
+    console.log('Test minutes')
+    if (!minutesInput.value){
+      minutesDivInput.innerHTML = `<div> A number is required. </div>`
+    }
+      return false};
+  return true;
+}
