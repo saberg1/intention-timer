@@ -131,7 +131,8 @@ function validateSeconds(event) {
   if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)){
     console.log('Test seconds')
     if (!secondsInput.value){
-      secondsDivInput.innerHTML = `<div> A number is required. </div>`
+      secondsDivInput.innerHTML = `<img src="assets/warning.svg">
+      <div>A number is required. </div>`
     }
       return false};
   return true;
@@ -143,8 +144,29 @@ function validateMinutes(event) {
   if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)){
     console.log('Test minutes')
     if (!minutesInput.value){
-      minutesDivInput.innerHTML = `<div> A number is required. </div>`
+      minutesDivInput.innerHTML = `<img src="assets/warning.svg">
+      <div> A number is required. </div>`
     }
       return false};
   return true;
 }
+
+// function validateSeconds(event){
+//   validateTime(secondsInput, secondsDivInput)
+// };
+
+// function validateMinutes(event){
+//   validateTime(minutesInput, minutesDivInput)
+// };
+//
+// function validateTime(inputValue, inputDiv) {
+//   var ASCIICode = (event.which) ? event.which : event.keyCode
+//
+//   if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)){
+//     console.log('Test seconds')
+//     if (!inputValue.value){
+//       inputDiv.innerHTML = `<div> A number is required. </div>`
+//         return false};
+//     }
+//   return true;
+// }
