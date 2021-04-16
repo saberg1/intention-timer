@@ -84,7 +84,8 @@ function displayTimer() {
   min = min <10 ? '0' + min : min
   sec = sec <10 ? '0' + sec : sec
   activityContainer.innerHTML = `
-    <div>${min}:${sec}</div>
+    <h4>${activityInput.value}</h4>
+    <h5>${min}:${sec}</h5>
     <a href="" id="btn" class="btn btn-start">START</a>
 
     `
@@ -103,7 +104,8 @@ function updateTimer(event) {
       sec = sec <10 ? '0' + sec : sec
 
       activityContainer.innerHTML = `
-      <h4>${min}:${sec}</h4>
+      <h4>${activityInput.value}</h4>
+      <h5>${min}:${sec}</h5>
       <a href="" id="btn" class="btn btn-start">START</a>
       `
 
