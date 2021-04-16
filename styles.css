@@ -239,8 +239,17 @@ input {
   margin-bottom: 3em;
   }
 
-
-}
+  /* input:invalid {
+    border: 2px dashed red;
+  }
+  
+  input:invalid:required {
+    background-image: red
+  }
+   */
+  /* input:valid {
+    border: 2px solid black;
+  } */
 
 /* function that applies color dynamically based on radio button selected
 3 radio buttons, each with an associated color but one function that tells

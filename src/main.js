@@ -36,7 +36,7 @@ var activities = [];
 
 //Event Listeners
 divInputs.addEventListener('click', changeMe);
-submitBtn.addEventListener('click', submitData);
+submitBtn.addEventListener('click', submitData, displayTimer);
 
 activityContainer.addEventListener('click', updateTimer)
 
@@ -73,6 +73,7 @@ function submitData(){
   if (activityInput.value || minutesInput.value || secondsInput.value){
     currentActivity = new Activity(activity, activityInput.value, minutesInput.value, secondsInput.value)
   }
+  validateDescription()
   displayTimer();
 };
 
@@ -132,7 +133,6 @@ function validateSeconds(event) {
   var ASCIICode = (event.which) ? event.which : event.keyCode
 
   if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)){
-    console.log('Test seconds')
     if (!secondsInput.value){
       secondsDivInput.innerHTML = `
       <img src="assets/warning.svg" <span>A number is required.</span>`
@@ -145,13 +145,25 @@ function validateMinutes(event) {
   var ASCIICode = (event.which) ? event.which : event.keyCode
 
   if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)){
-    console.log('Test minutes')
     if (!minutesInput.value){
       minutesDivInput.innerHTML = `
       <img src="assets/warning.svg" <span>A number is required.</span>`
     }
       return false};
   return true;
+}
+
+function validateDescription(){
+  
+  if(activityInput.length === 0){
+    submitBtn.disabled = true;
+    alert('test')
+    // break
+  }
+  else {
+    // console.log('broke')
+    return
+  }
 }
 
 
