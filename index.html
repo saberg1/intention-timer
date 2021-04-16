@@ -32,22 +32,23 @@
               </label>
             </div>
             <div class='input-container'>
-              <div class='description'>
+              <section class='description'>
                 <label for='activity-description'> What would you like to accomplish during this time?</label>
                 <input type='text' class='activity-description' id='activityDescription' name='activity-description'> <br>
                 <div id='activityDivInput'> </div>
-              </div>
-              <div class='minutes-seconds'>
+              </section>
+              <section class='minutes-seconds'>
                 <div class='minutes'>
                   <label for='minutes'>Minutes</label>
                   <input onkeypress="return validateMinutes(event)" type='text' class='minutes' id='minutes' name='minutes' pattern="[0-9]+">
-                  <div id='minutesDivInput'> </div>
+                  <div id='minutesDivInput'> </div><br>
+                </div>
                 <div class='seconds'>
                   <label for='seconds'>Seconds</label>
-                  <input onkeypress="return validateSeconds(event)" type='text' class='seconds' id='seconds' name='seconds' pattern="[0-9]+"><br>
-                  <div id='secondsDivInput'> </div>
+                  <input onkeypress="return validateSeconds(event)" type='text' class='seconds' id='seconds' name='seconds' pattern="[0-9]+">
+                  <div id='secondsDivInput'> </div><br>
                 </div>
-              </div>
+              </section>
               <input type='submit' class='submit' id='submit' value='Start Activity'>
             </div>
           </form>
