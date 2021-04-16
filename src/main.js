@@ -30,13 +30,15 @@ var activityCategory = document.getElementsByName('activity');
 var newActivity = document.querySelector('#newActivity');
 var activityContainer = document.querySelector('#activityContainer')
 
+var activityRadios = document.querySelector('#activityRadios')
+
 //Global Variables
 var currentActivity;
 var activities = [];
 
 //Event Listeners
 divInputs.addEventListener('click', changeMe);
-submitBtn.addEventListener('click', submitData, displayTimer);
+submitBtn.addEventListener('click', validate);
 
 activityContainer.addEventListener('click', updateTimer)
 
@@ -62,18 +64,18 @@ function changeMe(){
   }
 }
 
-function submitData(){
+function submitData(event){
+  // event.preventDefault()
   var activity;
   for (var i = 0; i < activityCategory.length; i++){
     if (activityCategory[i].checked){
       activity = activityCategory[i].value;
     }
   }
-  event.preventDefault()
+  // event.preventDefault()
   if (activityInput.value || minutesInput.value || secondsInput.value){
     currentActivity = new Activity(activity, activityInput.value, minutesInput.value, secondsInput.value)
   }
-  validateDescription()
   displayTimer();
 };
 
@@ -153,36 +155,50 @@ function validateMinutes(event) {
   return true;
 }
 
-function validateDescription(){
-  
-  if(activityInput.length === 0){
-    submitBtn.disabled = true;
-    alert('test')
-    // break
-  }
-  else {
-    // console.log('broke')
-    return
+function validate(event){
+  event.preventDefault()
+  if(!activityInput.value || !minutesInput.value || !secondsInput.value){
+    validateDescription()
+    validateMinutesInput()
+    validateSecondsInput()
+    validateRadioBtns()
+  }else {
+    // validateSeconds(event)
+    // validateMinutes(event)
+    submitData()
   }
 }
 
+function validateDescription(){
+  if(!activityInput.value){
+    activityDivInput.innerHTML = `
+    <img src="assets/warning.svg" <span>A description is required.</span>
+    `
+  }
+}
+function validateSecondsInput(){
+  if(!secondsInput.value){
+    secondsDivInput.innerHTML = `
+    <img src="assets/warning.svg" <span>A number is required.</span>
+    `
+  }
+}
+function validateMinutesInput(){
+  if(!minutesInput.value){
+    minutesDivInput.innerHTML = `
+    <img src="assets/warning.svg" <span>A number is required.</span>
+    `
+  }
+}
+function validateRadioBtns(){
+  // for (var i = 0; i < activityCategory.length; i++){
+  //   if (!activityCategory[i].checked){
+    if(!studyRadio.checked && !meditateRadio.checked && !exerciseRadio.checked){
+      activityRadios.innerHTML = `
+      <img src="assets/warning.svg" <span>A category must be selected.</span>
+      `
+  }
+}
 
-// function validateSeconds(event){
-//   validateTime(secondsInput, secondsDivInput)
-// };
-
-// function validateMinutes(event){
-//   validateTime(minutesInput, minutesDivInput)
-// };
-//
-// function validateTime(inputValue, inputDiv) {
-//   var ASCIICode = (event.which) ? event.which : event.keyCode
-//
-//   if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)){
-//     console.log('Test seconds')
-//     if (!inputValue.value){
-//       inputDiv.innerHTML = `<div> A number is required. </div>`
-//         return false};
-//     }
-//   return true;
-// }
+// condtion to disable for all the input(minutes/activty/seconds)
+// don't forget to check radio inputs. have separate function for different checking of inputs
