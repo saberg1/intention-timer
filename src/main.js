@@ -41,6 +41,9 @@ divInputs.addEventListener('click', changeMe);
 submitBtn.addEventListener('click', validate);
 
 activityContainer.addEventListener('click', updateTimer)
+activityContainer.addEventListener('click', function(event) {
+  logActivity(event)
+});
 
 //Event Handlers
 function changeMe(){
@@ -65,16 +68,7 @@ function changeMe(){
 }
 
 function submitData(){
-  var activity;
-  for (var i = 0; i < activityCategory.length; i++){
-    if (activityCategory[i].checked){
-      activity = activityCategory[i].value;
-    }
-  }
-  if (activityInput.value || minutesInput.value || secondsInput.value){
-    currentActivity = new Activity(activity, activityInput.value, minutesInput.value, secondsInput.value)
-  }
-  activities.push(currentActivity)
+  getCurrentActivity();
   displayTimer();
 };
 
@@ -90,10 +84,10 @@ function displayTimer() {
     <h5>${min}:${sec}</h5>
     <a href="" id="btn" class="btn btn-start">START</a>
     `
-    buttonColorChange()
+    changeButtonColor()
 }
 
-function buttonColorChange() {
+function changeButtonColor() {
   var title = document.getElementById('btn');
   if (studyRadio.checked && !meditateRadio.checked && !exerciseRadio.checked) {
     title.style.border = '4px solid #B3FD78';
@@ -122,6 +116,7 @@ function updateTimer(event) {
       <h5>${min}:${sec}</h5>
       <a href="" id="btn" class="btn btn-start">START</a>
       `
+      changeButtonColor();
 
     if (--time < 0)  {
       clearInterval(myInterval);
@@ -139,7 +134,9 @@ function completeActivity() {
   <h4>${activityInput.value}</h4>
   <h5>00:00</h5>
   <a href="" id="btn" class="btn btn-start">COMPLETE</a>
+  <button class='log-activity'>Log Activity</button>
   `
+  changeButtonColor();
 }
 
 function validateSeconds(event) {
@@ -210,6 +207,34 @@ function validateRadioBtns(){
       `
   }
 }
+
+function logActivity(event) {
+  if (event.target.innerText === 'Log Activity') {
+    getCurrentActivity();
+    activities.push(currentActivity);
+    rightAside.innerHTML += `
+    <h6>${currentActivity.category}</h6>
+    <p class='time'>${currentActivity.minutes}<span> MIN</span> ${currentActivity.seconds}<span> SECONDS</span></p>
+    <p class='description'>${currentActivity.description}</p>
+      `
+
+  }
+  }
+
+function getCurrentActivity() {
+  var activity;
+  for (var i = 0; i < activityCategory.length; i++){
+    if (activityCategory[i].checked){
+      activity = activityCategory[i].value;
+    }
+  }
+  if (activityInput.value || minutesInput.value || secondsInput.value){
+    currentActivity = new Activity(activity, activityInput.value, minutesInput.value, secondsInput.value)
+  }
+}
+// access the value of the key value pair in the object instance at the index
+// dont push to the array until log activity****
+
 
 // condtion to disable for all the input(minutes/activty/seconds)
 // don't forget to check radio inputs. have separate function for different checking of inputs
