@@ -67,6 +67,20 @@ function changeMe(){
   }
 }
 
+function getCurrentActivity() {
+  var activity;
+  for (var i = 0; i < activityCategory.length; i++){
+    if (activityCategory[i].checked){
+      activity = activityCategory[i].value;
+    }
+  }
+  if (activityInput.value || minutesInput.value || secondsInput.value){
+    console.log(activity, activity.value)
+    currentActivity = new Activity(activity, activityInput.value, minutesInput.value, secondsInput.value)
+    console.log(currentActivity)
+  }
+}
+
 function submitData(){
   getCurrentActivity();
   displayTimer();
@@ -210,28 +224,16 @@ function validateRadioBtns(){
 
 function logActivity(event) {
   if (event.target.innerText === 'Log Activity') {
-    getCurrentActivity();
     activities.push(currentActivity);
     rightAside.innerHTML += `
     <h6>${currentActivity.category}</h6>
     <p class='time'>${currentActivity.minutes}<span> MIN</span> ${currentActivity.seconds}<span> SECONDS</span></p>
     <p class='description'>${currentActivity.description}</p>
       `
-
   }
   }
 
-function getCurrentActivity() {
-  var activity;
-  for (var i = 0; i < activityCategory.length; i++){
-    if (activityCategory[i].checked){
-      activity = activityCategory[i].value;
-    }
-  }
-  if (activityInput.value || minutesInput.value || secondsInput.value){
-    currentActivity = new Activity(activity, activityInput.value, minutesInput.value, secondsInput.value)
-  }
-}
+
 // access the value of the key value pair in the object instance at the index
 // dont push to the array until log activity****
 
