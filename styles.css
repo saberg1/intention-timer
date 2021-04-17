@@ -13,10 +13,6 @@ Error: #EFB7EC */
   font-family: Montserrat;
 }
 
-.hidden {
-  display: none;
-}
-
 body{
   margin: 0;
 }
@@ -41,12 +37,38 @@ header {
 }
 
 .right {
+  width: 45vw;
   margin: 30px;
 }
 
-p {
+.no-activities {
   text-align: center;
   margin-top: 3rem;
+}
+
+.past-activity-card{
+  display: block;
+  background-color: #46424D;
+  margin: 0
+}
+
+h6 {
+  font-size: 0.8rem;
+  font-weight: bolder;
+  margin-left: 1rem;
+  margin-top: 1rem
+  color: #FFF;
+}
+
+.time-card {
+  margin-left: 1rem;
+}
+
+.description-card {
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+  margin-top: 1rem
 }
 
 .left {
@@ -224,8 +246,8 @@ input {
 .btn-start {
   background: #46424D;
   text-align: center;
-  width: 23vw;
-  height: 33vh;
+  width: 250px;
+  height: 250px;
   border: 4px solid white;
   border-radius: 100%;
   display: inline-flex;
@@ -239,10 +261,14 @@ input {
   margin-bottom: 3em;
   }
 
+  .hidden {
+    display: none;
+  }
+
   /* input:invalid {
     border: 2px dashed red;
   }
-  
+
   input:invalid:required {
     background-image: red
   }
