@@ -9,11 +9,17 @@ class Activity{
   }
   startTimer(){
     // console.log('timer started')
+    
   }
   markComplete(){
+    this.completed = true;
 
   }
   saveToStorage(){
+    console.log('this', this)
+    var objectToStore = this
+    var stringObject = JSON.stringify(objectToStore);
+    localStorage.setItem('stringObject', stringObject)
 
   }
 }

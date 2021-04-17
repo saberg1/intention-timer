@@ -13,6 +13,7 @@ var submitBtn = document.querySelector('#submit');
 var imageSection = document.querySelector('#imageSection');
 var form = document.querySelector('#form');
 var rightAside = document.querySelector('#rightAside');
+var leftAside = document.querySelector('#leftAside')
 
 var minutesDivInput = document.querySelector('#minutesDivInput');
 var secondsDivInput = document.querySelector('#secondsDivInput');
@@ -32,6 +33,8 @@ var activityContainer = document.querySelector('#activityContainer')
 
 var activityRadios = document.querySelector('#activityRadios')
 
+var noActivity = document.querySelector('#noActivities')
+
 //Global Variables
 var currentActivity;
 var activities = [];
@@ -43,6 +46,9 @@ submitBtn.addEventListener('click', validate);
 activityContainer.addEventListener('click', updateTimer)
 activityContainer.addEventListener('click', function(event) {
   logActivity(event)
+});
+activityContainer.addEventListener('click', function(event) {
+  createNewActivity(event)
 });
 
 //Event Handlers
@@ -74,10 +80,8 @@ function getCurrentActivity() {
       activity = activityCategory[i].value;
     }
   }
-  if (activityInput.value || minutesInput.value || secondsInput.value){
-    console.log(activity, activity.value)
+  if (activityInput.value && minutesInput.value && secondsInput.value){
     currentActivity = new Activity(activity, activityInput.value, minutesInput.value, secondsInput.value)
-    console.log(currentActivity)
   }
 }
 
@@ -224,14 +228,35 @@ function validateRadioBtns(){
 
 function logActivity(event) {
   if (event.target.innerText === 'Log Activity') {
+    currentActivity.markComplete();
+    currentActivity.saveToStorage();
     activities.push(currentActivity);
-    rightAside.innerHTML += `
-    <h6>${currentActivity.category}</h6>
-    <p class='time'>${currentActivity.minutes}<span> MIN</span> ${currentActivity.seconds}<span> SECONDS</span></p>
-    <p class='description'>${currentActivity.description}</p>
-      `
+    noActivity.innerHTML = ''
+    for (var i = 0; i <activities.length; i++) {
+      noActivity.innerHTML += `
+      <section class='past-activity-card'>
+        <h6>${activities[i].category}</h6>
+        <p class='time-card'>${activities[i].minutes}<span> MIN</span> ${activities[i].seconds}<span> SECONDS</span></p>
+        <p class='description-card'>${activities[i].description}</p>
+      </section>
+        `
+      }
+    activityContainer.innerHTML = `
+    <button class='create-new-activity'>Create a new activity</button>
+    `
   }
+}
+
+
+function createNewActivity(event) {
+  if (event.target.innerText === 'Create a new activity') {
+    location.reload();
+    localStorage.getItem()
   }
+}
+
+
+// function display
 
 
 // access the value of the key value pair in the object instance at the index
