@@ -90,7 +90,20 @@ function displayTimer() {
     <h5>${min}:${sec}</h5>
     <a href="" id="btn" class="btn btn-start">START</a>
     `
+    buttonColorChange()
 }
+
+function buttonColorChange() {
+  var title = document.getElementById('btn');
+  if (studyRadio.checked && !meditateRadio.checked && !exerciseRadio.checked) {
+    title.style.border = '4px solid #B3FD78';
+  } else if (meditateRadio.checked && !studyRadio.checked && !exerciseRadio.checked) {
+      title.style.border = '4px solid #C278FD';
+    }else {
+      title.style.border = '4px solid #FD8078';
+    }
+};
+
 
 function updateTimer(event) {
   if(event.target.id === 'btn') {
