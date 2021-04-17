@@ -64,18 +64,17 @@ function changeMe(){
   }
 }
 
-function submitData(event){
-  // event.preventDefault()
+function submitData(){
   var activity;
   for (var i = 0; i < activityCategory.length; i++){
     if (activityCategory[i].checked){
       activity = activityCategory[i].value;
     }
   }
-  // event.preventDefault()
   if (activityInput.value || minutesInput.value || secondsInput.value){
     currentActivity = new Activity(activity, activityInput.value, minutesInput.value, secondsInput.value)
   }
+  activities.push(currentActivity)
   displayTimer();
 };
 
@@ -90,7 +89,6 @@ function displayTimer() {
     <h4>${activityInput.value}</h4>
     <h5>${min}:${sec}</h5>
     <a href="" id="btn" class="btn btn-start">START</a>
-
     `
 }
 
