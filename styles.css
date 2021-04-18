@@ -274,7 +274,6 @@ input {
     padding: 7px 45px;
     text-align: center;
     text-decoration: none;
-    text-size: 2rem;
     margin-bottom: 3rem;
     cursor: pointer;
     border-radius: 4px;
@@ -282,6 +281,26 @@ input {
     align-self: center;
   }
 
+.create-new-activity {
+  background-color: #FFF;
+  border: none;
+  color: #2B2733;
+  padding: 7px 55px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-bottom: 25rem;
+  cursor: pointer;
+  border-radius: 4px;
+  text-transform: uppercase;
+  align-self: center;
+}
+
+.vertical-line {
+  background-color: #46424D;
+  height: 100vh;
+  width: .4vw;
+}
   /* input:invalid {
     border: 2px dashed red;
   }
