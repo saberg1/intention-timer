@@ -227,7 +227,7 @@ function validateRadioBtns(){
 }
 
 function logActivity(event) {
-  if (event.target.innerText === 'Log Activity') {
+  if (event.target.innerText === 'LOG ACTIVITY') {
     currentActivity.markComplete();
     currentActivity.saveToStorage();
     activities.push(currentActivity);

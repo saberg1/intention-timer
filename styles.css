@@ -34,6 +34,7 @@ header {
   text-align: center;
   font-size: 1.5rem;
   height: 6vh;
+  padding-top: 10px;
 }
 
 .right {
@@ -208,13 +209,14 @@ input {
   background-color: #FFF;
   border: none;
   color: #2B2733;
-  padding: 10px 20px;
+  padding: 7px 25px;
   text-align: center;
   text-decoration: none;
+  text-size: 2rem;
   margin: 4px 2px;
   margin-right: 5.5vw;
   cursor: pointer;
-  border-radius: 16px;
+  border-radius: 4px;
   text-transform: uppercase;
   align-self: flex-end;;
 }
@@ -258,13 +260,47 @@ input {
   font-size: 2rem;
   color: white;
   text-decoration: none;
-  margin-bottom: 3em;
+  margin-bottom: 1rem;
   }
 
   .hidden {
     display: none;
   }
 
+  .log-activity {
+    background-color: #FFF;
+    border: none;
+    color: #2B2733;
+    padding: 7px 45px;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 3rem;
+    cursor: pointer;
+    border-radius: 4px;
+    text-transform: uppercase;
+    align-self: center;
+  }
+
+.create-new-activity {
+  background-color: #FFF;
+  border: none;
+  color: #2B2733;
+  padding: 7px 55px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-bottom: 25rem;
+  cursor: pointer;
+  border-radius: 4px;
+  text-transform: uppercase;
+  align-self: center;
+}
+
+.vertical-line {
+  background-color: #46424D;
+  height: 100vh;
+  width: .4vw;
+}
   /* input:invalid {
     border: 2px dashed red;
   }
