@@ -229,39 +229,52 @@ function validateRadioBtns(){
 function logActivity(event) {
   if (event.target.innerText === 'LOG ACTIVITY') {
     currentActivity.markComplete();
-    currentActivity.saveToStorage();
     activities.push(currentActivity);
-    noActivity.innerHTML = ''
-    for (var i = 0; i <activities.length; i++) {
-      noActivity.innerHTML += `
-      <section class='past-activity-card'>
-        <h6>${activities[i].category}</h6>
-        <p class='time-card'>${activities[i].minutes}<span> MIN</span> ${activities[i].seconds}<span> SECONDS</span></p>
-        <p class='description-card'>${activities[i].description}</p>
-      </section>
-        `
-      }
+    currentActivity.saveToStorage();
+    renderCards();
     activityContainer.innerHTML = `
     <button class='create-new-activity'>Create a new activity</button>
     `
   }
 }
 
-
 function createNewActivity(event) {
-  if (event.target.innerText === 'Create a new activity') {
+  if (event.target.innerText === 'CREATE A NEW ACTIVITY') {
     location.reload();
-    localStorage.getItem()
   }
+  renderCards();
 }
 
+function retrieveActivity() {
+  var storedKeys = [];
+  for (var i = 0; i < localStorage.length; i++) {
+    var loggedActivity = localStorage.key(i)
+    storedKeys.push(loggedActivity);
+  }
+  var storedValues = [];
+  for (var i = 0; i < storedKeys.length; i++) {
+    var activityValue = localStorage.getItem(storedKeys[i])
+    var parsedValue = JSON.parse(activityValue)
+    storedValues.push(parsedValue)
+  }
+  return storedValues
+  renderCards();
 
-// function display
+}
 
+// on load function???? need to render when page loads, not just a click
 
-// access the value of the key value pair in the object instance at the index
-// dont push to the array until log activity****
-
-
-// condtion to disable for all the input(minutes/activty/seconds)
-// don't forget to check radio inputs. have separate function for different checking of inputs
+ function renderCards() {
+    noActivity.innerHTML = ''
+    activities = retrieveActivity();
+    for (var i = 0; i < activities.length; i++) {
+      noActivity.innerHTML += `
+      <section class='past-activity-card'>
+        <div class='card-category'></div>
+        <h6>${activities[i].category}</h6>
+        <p class='time-card'>${activities[i].minutes}<span> MIN</span> ${activities[i].seconds}<span> SECONDS</span></p>
+        <p class='description-card'>${activities[i].description}</p>
+      </section>
+        `
+      }
+}

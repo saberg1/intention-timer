@@ -9,7 +9,9 @@ class Activity{
   }
   startTimer(){
     // console.log('timer started')
-    
+
+    // add starTimer function here and call in main.JS
+
   }
   markComplete(){
     this.completed = true;
@@ -17,9 +19,20 @@ class Activity{
   }
   saveToStorage(){
     console.log('this', this)
-    var objectToStore = this
-    var stringObject = JSON.stringify(objectToStore);
-    localStorage.setItem('stringObject', stringObject)
+    var stringKey = JSON.stringify(this.id)
+    var stringObject = JSON.stringify(this);
+    localStorage.setItem(stringKey, stringObject)
 
   }
 }
+
+// var parsedObject = JSON.parse(currentActivity)
+
+// separate display storage function set to parse object
+// and display it onload?
+
+/* Function {
+  past activities innerHTNML  = ''
+  onLoad();
+  displayPastActivities()
+}*/
