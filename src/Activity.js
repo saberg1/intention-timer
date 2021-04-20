@@ -8,10 +8,7 @@ class Activity{
     this.completed = false;
   }
   startTimer(){
-    // console.log('timer started')
-
-    // add starTimer function here and call in main.JS
-
+    //move timer function to here
   }
   markComplete(){
     this.completed = true;

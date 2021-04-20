@@ -43,13 +43,18 @@ var activities = [];
 divInputs.addEventListener('click', changeMe);
 submitBtn.addEventListener('click', validate);
 
+window.addEventListener('load', renderCards);
+//change logactivity + createnewAvitity to be invoked on updateTImer() function
+//onlooad render() function
+
 activityContainer.addEventListener('click', updateTimer)
 activityContainer.addEventListener('click', function(event) {
   logActivity(event)
-});
-activityContainer.addEventListener('click', function(event) {
   createNewActivity(event)
 });
+// activityContainer.addEventListener('click', function(event) {
+//   createNewActivity(event)
+// });
 
 //Event Handlers
 function changeMe(){
@@ -233,16 +238,15 @@ function logActivity(event) {
     currentActivity.saveToStorage();
     renderCards();
     activityContainer.innerHTML = `
-    <button class='create-new-activity'>Create a new activity</button>
+    <button class='create-new-activity' id='createBtn'>Create a new activity</button>
     `
   }
 }
 
 function createNewActivity(event) {
-  if (event.target.innerText === 'CREATE A NEW ACTIVITY') {
+  if (event.target.id === 'createBtn') {
     location.reload();
-  }
-  renderCards();
+    }
 }
 
 function retrieveActivity() {
@@ -258,7 +262,7 @@ function retrieveActivity() {
     storedValues.push(parsedValue)
   }
   return storedValues
-  renderCards();
+  // renderCards();
 
 }
 
