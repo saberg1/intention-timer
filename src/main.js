@@ -107,32 +107,8 @@ function changeButtonColor() {
     }
 };
 
-
 function updateTimer(event) {
   if(event.target.id === 'btn') {
-    var startMin = parseInt(currentActivity.minutes);
-    var startSec = parseInt(currentActivity.seconds);
-    var time = startMin*60 + startSec
-    var myInterval =  setInterval(function() {
-      var min = Math.floor(time/60)
-      var sec = time % 60
-
-      min = min <10 ? '0' + min : min
-      sec = sec <10 ? '0' + sec : sec
-
-      activityContainer.innerHTML = `
-      <h4>${activityInput.value}</h4>
-      <h5>${min}:${sec}</h5>
-      <a href="" id="btn" class="btn btn-start">START</a>
-      `
-      changeButtonColor();
-
-      if (--time < 0)  {
-       clearInterval(myInterval);
-       completeActivity();
-        }
-    }
-      ,1000);
     currentActivity.startTimer();
     event.preventDefault();
   }
@@ -187,16 +163,10 @@ function validate(event){
 };  
 
 function validateRadioBtns(){
-  console.log('log before if')
   if(!studyRadio.checked && !meditateRadio.checked && !exerciseRadio.checked){
-    console.log('log after if')
     activityRadios.innerHTML = `
      <img src="assets/warning.svg"> <span>A category must be selected.</span>
       `
-
-    // return
-  } else {
-    console.log('youre fucked')
   }
 }
 
@@ -271,6 +241,6 @@ function retrieveActivity() {
         <p class='description-card'>${activities[i].description}</p>
       </section>
         `
-      }
+    }
+  }
 }
- }

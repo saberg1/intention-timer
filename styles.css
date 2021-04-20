@@ -9,7 +9,6 @@ Exercise: #FD8078
 Error: #EFB7EC */
 
 * {
-  /* border: 2px solid red; */
   font-family: Montserrat;
 }
 
@@ -57,7 +56,7 @@ h6 {
   font-size: 0.8rem;
   font-weight: bolder;
   margin-left: 1rem;
-  margin-top: 1rem
+  margin-top: 1rem;
   color: #FFF;
 }
 
@@ -76,8 +75,6 @@ h6 {
   width: 100vw;
   margin: 30px;
 }
-
-
 
 [type=radio] {
   position: absolute;
@@ -111,16 +108,13 @@ h6 {
 }
 
 h1{
-  margin-top: 2em;
-  margin-bottom: 0.5em;
+  margin: 2em 0 .5em 0;
 }
 
 h2 {
   width: 15rem;
   color: #FFF;
-  margin-top: 2em;
-  margin-left: 1em;
-  margin-bottom: 0;
+  margin: 2em 0 0 1em;
   font-size: 1.3rem;
 }
 
@@ -132,8 +126,7 @@ h3 {
 
 h4 {
   align-self: center;
-  margin-top: 2rem;
-  margin-bottom: 0rem;
+  margin: 2rem 0 0 0;
   font-size: 2rem;
   color: #FFF;
   text-transform: capitalize;
@@ -156,8 +149,6 @@ h5 {
 .image-section {
   justify-content: space-between;
 }
-
-
 
 img {
   height: 3vh;
@@ -186,7 +177,8 @@ input {
   justify-content: space-evenly;
 }
 
-.minutes {
+.minutes, 
+.seconds {
   display: flex;
   flex-direction: column;
   color: #FFF;
@@ -195,30 +187,17 @@ input {
   font-size: 1.1rem;
 }
 
-.seconds {
-  display: flex;
-  flex-direction: column;
-  color: #FFF;
-  width: 20vw;
-  margin-top: 1.5rem;
-  font-size:1.1rem;
-}
-
-
 .submit {
   background-color: #FFF;
   border: none;
   color: #2B2733;
   padding: 7px 25px;
   text-align: center;
-  text-decoration: none;
-  text-size: 2rem;
-  margin: 4px 2px;
   margin-right: 5.5vw;
   cursor: pointer;
   border-radius: 4px;
   text-transform: uppercase;
-  align-self: flex-end;;
+  align-self: flex-end;
 }
 
 .activity-description{
@@ -259,12 +238,7 @@ input {
   align-self: center;
   font-size: 2rem;
   color: white;
-  text-decoration: none;
   margin-bottom: 1rem;
-  }
-
-  .hidden {
-    display: none;
   }
 
   .log-activity {
@@ -273,7 +247,6 @@ input {
     color: #2B2733;
     padding: 7px 45px;
     text-align: center;
-    text-decoration: none;
     margin-bottom: 3rem;
     cursor: pointer;
     border-radius: 4px;
@@ -287,7 +260,6 @@ input {
   color: #2B2733;
   padding: 7px 55px;
   text-align: center;
-  text-decoration: none;
   font-size: 1rem;
   margin-bottom: 25rem;
   cursor: pointer;
@@ -301,18 +273,9 @@ input {
   height: 100vh;
   width: .4vw;
 }
-  /* input:invalid {
-    border: 2px dashed red;
-  }
 
-  input:invalid:required {
-    background-image: red
-  }
-   */
-  /* input:valid {
-    border: 2px solid black;
-  } */
-
-/* function that applies color dynamically based on radio button selected
-3 radio buttons, each with an associated color but one function that tells
-the DOM when radio button 1 is selected, apply associated color to: button outline start button outline, and button text */
+.card-category {
+  background-color: green;
+  width: 1rem;
+  height: 1rem
+}
