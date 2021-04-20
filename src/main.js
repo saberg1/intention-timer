@@ -3,17 +3,10 @@ var activityInput = document.getElementById('activityDescription');
 var minutesInput = document.getElementById('minutes');
 var secondsInput = document.getElementById('seconds');
 
-var studyRadio = document.getElementById('study')
-var meditateRadio = document.getElementById('meditate')
-var exerciseRadio = document.getElementById('exercise')
-var divInputs = document.getElementById('addListener')
-
-var submitBtn = document.getElementById('submit');
-
-// var imageSection = document.getElementById('imageSection');
-// var form = document.getElementById('form');
-// var rightAside = document.getElementById('rightAside');
-// var leftAside = document.getElementById('leftAside')
+var studyRadio = document.getElementById('study');
+var meditateRadio = document.getElementById('meditate');
+var exerciseRadio = document.getElementById('exercise');
+var divInputs = document.getElementById('addListener');
 
 var minutesDivInput = document.getElementById('minutesDivInput');
 var secondsDivInput = document.getElementById('secondsDivInput');
@@ -29,11 +22,12 @@ var studyImg = document.getElementById('studyImgChng');
 var activityCategory = document.getElementsByName('activity');
 
 var newActivity = document.getElementById('newActivity');
-var activityContainer = document.getElementById('activityContainer')
+var activityContainer = document.getElementById('activityContainer');
 
-var activityRadios = document.getElementById('activityRadios')
+var activityRadios = document.getElementById('activityRadios');
+var noActivity = document.getElementById('noActivities');
 
-var noActivity = document.getElementById('noActivities')
+var submitBtn = document.getElementById('submit');
 
 //Global Variables
 var currentActivity;
@@ -77,17 +71,16 @@ function getCurrentActivity() {
     if (activityCategory[i].checked){
       activity = activityCategory[i].value;
     }
-  }
+  };
   if (activityInput.value && minutesInput.value && secondsInput.value){
     currentActivity = new Activity(activity, activityInput.value, minutesInput.value, secondsInput.value)
   }
-}
+};
 
 function submitData(){
   getCurrentActivity();
   displayTimer();
 };
-
 
 function displayTimer() {
   newActivity.innerText = 'Current Activity'
@@ -101,7 +94,7 @@ function displayTimer() {
     <a href="" id="btn" class="btn btn-start">START</a>
     `
     changeButtonColor()
-}
+};
 
 function changeButtonColor() {
   var title = document.getElementById('btn');
@@ -120,7 +113,7 @@ function updateTimer(event) {
     var startMin = parseInt(currentActivity.minutes);
     var startSec = parseInt(currentActivity.seconds);
     var time = startMin*60 + startSec
-  var myInterval =  setInterval(function() {
+    var myInterval =  setInterval(function() {
       var min = Math.floor(time/60)
       var sec = time % 60
 
@@ -134,14 +127,14 @@ function updateTimer(event) {
       `
       changeButtonColor();
 
-    if (--time < 0)  {
-      clearInterval(myInterval);
-      completeActivity();
+      if (--time < 0)  {
+       clearInterval(myInterval);
+       completeActivity();
+        }
     }
-    }
-    ,1000);
-    currentActivity.startTimer()
-    event.preventDefault()
+      ,1000);
+    currentActivity.startTimer();
+    event.preventDefault();
   }
 }
 
@@ -153,7 +146,7 @@ function completeActivity() {
   <button class='log-activity'>Log Activity</button>
   `
   changeButtonColor();
-}
+};
 
 function validateSeconds(event) {
   var ASCIICode = (event.which) ? event.which : event.keyCode
@@ -165,7 +158,7 @@ function validateSeconds(event) {
     }
       return false};
   return true;
-}
+};
 
 function validateMinutes(event) {
   var ASCIICode = (event.which) ? event.which : event.keyCode
@@ -177,7 +170,7 @@ function validateMinutes(event) {
     }
       return false};
   return true;
-}
+};
 
 function validate(event){
   event.preventDefault()
@@ -185,11 +178,25 @@ function validate(event){
     validateDescription()
     validateMinutesInput()
     validateSecondsInput()
+  }
+  if(!studyRadio.checked && !meditateRadio.checked && !exerciseRadio.checked){
     validateRadioBtns()
   }else {
-    // validateSeconds(event)
-    // validateMinutes(event)
     submitData()
+  }  
+};  
+
+function validateRadioBtns(){
+  console.log('log before if')
+  if(!studyRadio.checked && !meditateRadio.checked && !exerciseRadio.checked){
+    console.log('log after if')
+    activityRadios.innerHTML = `
+     <img src="assets/warning.svg"> <span>A category must be selected.</span>
+      `
+
+    // return
+  } else {
+    console.log('youre fucked')
   }
 }
 
@@ -198,31 +205,24 @@ function validateDescription(){
     activityDivInput.innerHTML = `
     <img src="assets/warning.svg" <span>A description is required.</span>
     `
-  }
-}
+  }  
+};  
+
 function validateSecondsInput(){
   if(!secondsInput.value){
     secondsDivInput.innerHTML = `
     <img src="assets/warning.svg" <span>A number is required.</span>
     `
-  }
-}
+  }  
+};  
+
 function validateMinutesInput(){
   if(!minutesInput.value){
     minutesDivInput.innerHTML = `
     <img src="assets/warning.svg" <span>A number is required.</span>
     `
-  }
-}
-function validateRadioBtns(){
-  // for (var i = 0; i < activityCategory.length; i++){
-  //   if (!activityCategory[i].checked){
-    if(!studyRadio.checked && !meditateRadio.checked && !exerciseRadio.checked){
-      activityRadios.innerHTML = `
-      <img src="assets/warning.svg" <span>A category must be selected.</span>
-      `
-  }
-}
+  }    
+}   
 
 function logActivity(event) {
   if (event.target.innerText === 'LOG ACTIVITY') {
@@ -255,14 +255,12 @@ function retrieveActivity() {
     storedValues.push(parsedValue)
   }
   return storedValues
-  // renderCards();
-
 }
 
-// on load function???? need to render when page loads, not just a click
-
  function renderCards() {
+   if(localStorage.length > 0){
     noActivity.innerHTML = ''
+  
     activities = retrieveActivity();
     for (var i = 0; i < activities.length; i++) {
       noActivity.innerHTML += `
@@ -275,3 +273,4 @@ function retrieveActivity() {
         `
       }
 }
+ }
