@@ -1,39 +1,39 @@
 //Query Selectors
-var activityInput = document.querySelector('#activityDescription');
-var minutesInput = document.querySelector('#minutes');
-var secondsInput = document.querySelector('#seconds');
+var activityInput = document.getElementById('activityDescription');
+var minutesInput = document.getElementById('minutes');
+var secondsInput = document.getElementById('seconds');
 
-var studyRadio = document.querySelector('#study')
-var meditateRadio = document.querySelector('#meditate')
-var exerciseRadio = document.querySelector('#exercise')
-var divInputs = document.querySelector('#addListener')
+var studyRadio = document.getElementById('study')
+var meditateRadio = document.getElementById('meditate')
+var exerciseRadio = document.getElementById('exercise')
+var divInputs = document.getElementById('addListener')
 
-var submitBtn = document.querySelector('#submit');
+var submitBtn = document.getElementById('submit');
 
-var imageSection = document.querySelector('#imageSection');
-var form = document.querySelector('#form');
-var rightAside = document.querySelector('#rightAside');
-var leftAside = document.querySelector('#leftAside')
+var imageSection = document.getElementById('imageSection');
+var form = document.getElementById('form');
+var rightAside = document.getElementById('rightAside');
+var leftAside = document.getElementById('leftAside')
 
-var minutesDivInput = document.querySelector('#minutesDivInput');
-var secondsDivInput = document.querySelector('#secondsDivInput');
-var activityDivInput = document.querySelector('#activityDivInput');
+var minutesDivInput = document.getElementById('minutesDivInput');
+var secondsDivInput = document.getElementById('secondsDivInput');
+var activityDivInput = document.getElementById('activityDivInput');
 
-var studyContainer = document.querySelector('#studyContainer');
-var meditateContainer = document.querySelector('#meditateContainer');
-var exerciseContainer = document.querySelector('#exerciseContainer');
+var studyContainer = document.getElementById('studyContainer');
+var meditateContainer = document.getElementById('meditateContainer');
+var exerciseContainer = document.getElementById('exerciseContainer');
 
-var meditateImg = document.querySelector('#meditateImg');
-var exerciseImg = document.querySelector('#exerciseImg');
-var studyImg = document.querySelector('#studyImgChng');
+var meditateImg = document.getElementById('meditateImg');
+var exerciseImg = document.getElementById('exerciseImg');
+var studyImg = document.getElementById('studyImgChng');
 var activityCategory = document.getElementsByName('activity');
 
-var newActivity = document.querySelector('#newActivity');
-var activityContainer = document.querySelector('#activityContainer')
+var newActivity = document.getElementById('newActivity');
+var activityContainer = document.getElementById('activityContainer')
 
-var activityRadios = document.querySelector('#activityRadios')
+var activityRadios = document.getElementById('activityRadios')
 
-var noActivity = document.querySelector('#noActivities')
+var noActivity = document.getElementById('noActivities')
 
 //Global Variables
 var currentActivity;
@@ -42,19 +42,12 @@ var activities = [];
 //Event Listeners
 divInputs.addEventListener('click', changeMe);
 submitBtn.addEventListener('click', validate);
-
 window.addEventListener('load', renderCards);
-//change logactivity + createnewAvitity to be invoked on updateTImer() function
-//onlooad render() function
-
 activityContainer.addEventListener('click', updateTimer)
 activityContainer.addEventListener('click', function(event) {
   logActivity(event)
   createNewActivity(event)
 });
-// activityContainer.addEventListener('click', function(event) {
-//   createNewActivity(event)
-// });
 
 //Event Handlers
 function changeMe(){
