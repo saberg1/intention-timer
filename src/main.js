@@ -10,10 +10,10 @@ var divInputs = document.getElementById('addListener')
 
 var submitBtn = document.getElementById('submit');
 
-var imageSection = document.getElementById('imageSection');
-var form = document.getElementById('form');
-var rightAside = document.getElementById('rightAside');
-var leftAside = document.getElementById('leftAside')
+// var imageSection = document.getElementById('imageSection');
+// var form = document.getElementById('form');
+// var rightAside = document.getElementById('rightAside');
+// var leftAside = document.getElementById('leftAside')
 
 var minutesDivInput = document.getElementById('minutesDivInput');
 var secondsDivInput = document.getElementById('secondsDivInput');
@@ -40,7 +40,7 @@ var currentActivity;
 var activities = [];
 
 //Event Listeners
-divInputs.addEventListener('click', changeMe);
+divInputs.addEventListener('click', radioBtnsColor);
 submitBtn.addEventListener('click', validate);
 window.addEventListener('load', renderCards);
 activityContainer.addEventListener('click', updateTimer)
@@ -50,7 +50,7 @@ activityContainer.addEventListener('click', function(event) {
 });
 
 //Event Handlers
-function changeMe(){
+function radioBtnsColor(){
   if(studyRadio.checked){
     meditateImg.src = "./assets/meditate.svg"
     exerciseImg.src = "./assets/exercise.svg"
