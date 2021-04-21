@@ -20,17 +20,17 @@ After reading the below instructions, use this link [here](https://saberg1.githu
 
 1. Are you having a rough time organizing your life? Need some time management to help stop the waste of the most valuable resource: TIME. Well with our state of the art web application Intention Timer, we’ll help get YOU organized. We have three different options you can start off with. 
 
-![Main Page](
+<a href="https://ibb.co/S5gwNPj"><img src="https://i.ibb.co/S5gwNPj/Screen-Shot-2021-04-20-at-10-49-43-PM.png" alt="Screen-Shot-2021-04-20-at-10-49-43-PM" border="0" /></a>
 
-![User Input](
+<a href="https://ibb.co/6NdGJ3F"><img src="https://i.ibb.co/6NdGJ3F/Screen-Shot-2021-04-20-at-10-49-55-PM.png" alt="Screen-Shot-2021-04-20-at-10-49-55-PM" border="0" /></a>
 
 2. From there you can enter a little description of you are wanting to do. Just fill in how many minutes and seconds you’ll be performing this for and hit the Start Activity button and you’re on your way. Click the start button and your personalized counter will start counting down. 
 
-![Timer]
+<a href="https://ibb.co/svYPR7N"><img src="https://i.ibb.co/svYPR7N/Screen-Shot-2021-04-20-at-10-50-00-PM.png" alt="Screen-Shot-2021-04-20-at-10-50-00-PM" border="0" /></a>
 
 3. Once completed you can log the activity to our easy to use tracker. Just click the Create New Activity button and you’ll be magically transported to the homepage to restart the process all over!
 
-![Logged Activities]
+<a href="https://ibb.co/vhJD08d"><img src="https://i.ibb.co/vhJD08d/Screen-Shot-2021-04-20-at-10-50-11-PM.png" alt="Screen-Shot-2021-04-20-at-10-50-11-PM" border="0" /></a>
 
 ## Future Additions
 
@@ -47,5 +47,7 @@ After reading the below instructions, use this link [here](https://saberg1.githu
 
 ## Contributors
 [Ashton Huxtable](https://github.com/ahuxtable1327)
+
 [Steven Berg](https://github.com/saberg1)
+
 [William McGuire](https://github.com/wmcguire18)
