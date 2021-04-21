@@ -8,31 +8,40 @@ class Activity{
     this.completed = false;
   }
   startTimer(){
-    // console.log('timer started')
+    var startMin = parseInt(currentActivity.minutes);
+    var startSec = parseInt(currentActivity.seconds);
+    var time = startMin*60 + startSec
+    var myInterval =  setInterval(function() {
+      var min = Math.floor(time/60)
+      var sec = time % 60
 
-    // add starTimer function here and call in main.JS
+      min = min <10 ? '0' + min : min
+      sec = sec <10 ? '0' + sec : sec
 
-  }
+      activityContainer.innerHTML = `
+      <h4>${activityInput.value}</h4>
+      <h5>${min}:${sec}</h5>
+      <a href="" id="btn" class="btn btn-start">START</a>
+      `
+      changeButtonColor();
+
+      if (--time < 0)  {
+       clearInterval(myInterval);
+       completeActivity();
+        }
+    }
+    ,1000); 
+   }
+
   markComplete(){
     this.completed = true;
 
   }
+
   saveToStorage(){
-    console.log('this', this)
     var stringKey = JSON.stringify(this.id)
     var stringObject = JSON.stringify(this);
     localStorage.setItem(stringKey, stringObject)
 
   }
-}
-
-// var parsedObject = JSON.parse(currentActivity)
-
-// separate display storage function set to parse object
-// and display it onload?
-
-/* Function {
-  past activities innerHTNML  = ''
-  onLoad();
-  displayPastActivities()
-}*/
+};
