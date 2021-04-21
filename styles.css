@@ -47,27 +47,30 @@ header {
 }
 
 .past-activity-card{
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   background-color: #46424D;
   margin: 0
+  
 }
 
 h6 {
   font-size: 0.8rem;
   font-weight: bolder;
-  margin-left: 1rem;
+  margin-left: .1rem;
   margin-top: 1rem;
   color: #FFF;
 }
 
 .time-card {
-  margin-left: 1rem;
+  margin-left: .1rem;
 }
 
 .description-card {
   text-transform: capitalize;
   font-size: 0.9rem;
-  margin-left: 1rem;
+  margin-left: .1rem;
   margin-top: 1rem
 }
 
@@ -232,6 +235,7 @@ input {
   border: 4px solid white;
   border-radius: 100%;
   display: inline-flex;
+  text-decoration: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;

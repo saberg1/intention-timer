@@ -29,6 +29,8 @@ var noActivity = document.getElementById('noActivities');
 
 var submitBtn = document.getElementById('submit');
 
+
+
 //Global Variables
 var currentActivity;
 var activities = [];
@@ -168,7 +170,7 @@ function validateRadioBtns(){
      <img src="assets/warning.svg"> <span>A category must be selected.</span>
       `
   }
-}
+};
 
 function validateDescription(){
   if(!activityInput.value){
@@ -192,7 +194,7 @@ function validateMinutesInput(){
     <img src="assets/warning.svg" <span>A number is required.</span>
     `
   }    
-}   
+}; 
 
 function logActivity(event) {
   if (event.target.innerText === 'LOG ACTIVITY') {
@@ -204,13 +206,13 @@ function logActivity(event) {
     <button class='create-new-activity' id='createBtn'>Create a new activity</button>
     `
   }
-}
+};
 
 function createNewActivity(event) {
   if (event.target.id === 'createBtn') {
     location.reload();
     }
-}
+};
 
 function retrieveActivity() {
   var storedKeys = [];
@@ -225,7 +227,7 @@ function retrieveActivity() {
     storedValues.push(parsedValue)
   }
   return storedValues
-}
+};
 
  function renderCards() {
    if(localStorage.length > 0){
@@ -233,14 +235,15 @@ function retrieveActivity() {
   
     activities = retrieveActivity();
     for (var i = 0; i < activities.length; i++) {
+      
       noActivity.innerHTML += `
       <section class='past-activity-card'>
-        <div class='card-category'></div>
+        <div class='card-category' id='cardCategory'></div>
         <h6>${activities[i].category}</h6>
         <p class='time-card'>${activities[i].minutes}<span> MIN</span> ${activities[i].seconds}<span> SECONDS</span></p>
         <p class='description-card'>${activities[i].description}</p>
       </section>
-        `
+      `
     }
   }
-}
+};

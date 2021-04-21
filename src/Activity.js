@@ -44,18 +44,4 @@ class Activity{
     localStorage.setItem(stringKey, stringObject)
 
   }
-  categoryColor(){
-    //link added cards color dash to category selected
-  }
-}
-
-// var parsedObject = JSON.parse(currentActivity)
-
-// separate display storage function set to parse object
-// and display it onload?
-
-/* Function {
-  past activities innerHTNML  = ''
-  onLoad();
-  displayPastActivities()
-}*/
+};
